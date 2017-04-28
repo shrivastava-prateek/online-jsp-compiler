@@ -159,7 +159,7 @@
     
 </dependencies>
   <build>
-    <finalName>online-java-ide</finalName>
+    <finalName>online-jsp-compiler</finalName>
 	 <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
