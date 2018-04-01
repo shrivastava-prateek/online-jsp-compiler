@@ -2,13 +2,14 @@
 
 <head>
 
+<title>Online JSP Compiler . Test your JSP code snippets instantly.</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="This online utility provides users to test their standalone JSP pages online with a single click. This is an open source utility, please feel free to provide suggestions.">
+<meta name="author" content="Prateek Shrivastava">
 <meta name="google-site-verification" content="rnvRHKJmtTnFyA8IztC5opcdrxOMa-lsaKvOh3e-Jj8" />
-<title>Online JSP Compiler</title>
+
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -43,6 +44,17 @@
   ga('send', 'pageview');
 
 </script>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6533903561100518",
+    enable_page_level_ads: true
+  });
+</script>
+
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 </head>
 
@@ -126,8 +138,8 @@ try{
 		<div class="footer-below">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">Copyright &copy; 2017 ! Online JSP
-						Compiler ! All Rights Reserved</div>
+					<div class="col-lg-12">Online JSP
+						Compiler</div>
 				</div>
 			</div>
 		</div>
@@ -156,6 +168,9 @@ try{
 	<!-- Theme JavaScript -->
 	<script src="resources/js/freelancer.min.js"></script>
 
+	
+	<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div>
+	
 </body>
 
 </html>
