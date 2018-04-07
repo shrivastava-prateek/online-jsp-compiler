@@ -9,7 +9,12 @@
 <meta name="description" content="This online utility provides users to test their standalone JSP pages online with a single click. This is an open source utility, please feel free to provide suggestions.">
 <meta name="author" content="Prateek Shrivastava">
 <meta name="google-site-verification" content="rnvRHKJmtTnFyA8IztC5opcdrxOMa-lsaKvOh3e-Jj8" />
+<style type="text/css">
+.LI-view-profile{
+margin-right: 63px !important;
+}
 
+</style>
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -133,7 +138,7 @@ try{
 						which helps user to test their standalone jsp pages</p>
 						
 						<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div>
-
+<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div> -->
 				</div>
 			</div>
 		</div>
