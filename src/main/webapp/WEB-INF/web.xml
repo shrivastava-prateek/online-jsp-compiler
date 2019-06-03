@@ -19,7 +19,7 @@
   <servlet>
     <servlet-name>JSPTestServlet</servlet-name>
     <servlet-class>
-                    com.onlinejspcompiler.servlets.JSPTestServlet
+                    com.onlinejspcompiler.servlet.JSPTestServlet
           </servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>

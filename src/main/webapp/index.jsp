@@ -2,18 +2,20 @@
 
 <head>
 
-<title>Online JSP Compiler . Test your JSP code snippets instantly.</title>
+<title>Online JSP Compiler . Test your JSP code snippets
+	instantly.</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This online utility provides users to test their standalone JSP pages online with a single click. This is an open source utility, please feel free to provide suggestions.">
+<meta name="description"
+	content="This online utility provides users to test their standalone JSP pages online with a single click. This is an open source utility, please feel free to provide suggestions.">
 <meta name="author" content="Prateek Shrivastava">
-<meta name="google-site-verification" content="rnvRHKJmtTnFyA8IztC5opcdrxOMa-lsaKvOh3e-Jj8" />
+<meta name="google-site-verification"
+	content="rnvRHKJmtTnFyA8IztC5opcdrxOMa-lsaKvOh3e-Jj8" />
 <style type="text/css">
-.LI-view-profile{
-margin-right: 63px !important;
+.LI-view-profile {
+	margin-right: 63px !important;
 }
-
 </style>
 
 <!-- Bootstrap Core CSS -->
@@ -38,28 +40,36 @@ margin-right: 63px !important;
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script',
+			'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-98417308-1', 'auto');
-  ga('send', 'pageview');
-
+	ga('create', 'UA-98417308-1', 'auto');
+	ga('send', 'pageview');
 </script>
 
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async
+	src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6533903561100518",
-    enable_page_level_ads: true
-  });
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client : "ca-pub-6533903561100518",
+		enable_page_level_ads : true
+	});
 </script>
 
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<script type="text/javascript"
+	src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 </head>
 
@@ -79,8 +89,15 @@ margin-right: 63px !important;
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="javascript:window.location.reload(true)">Online JSP Compiler</a>
-				<a href="https://github.com/shrivastava-prateek/online-jsp-compiler" class="pull-left"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+				<a class="navbar-brand"
+					href="javascript:window.location.reload(true)">Online JSP
+					Compiler</a> <a
+					href="https://github.com/shrivastava-prateek/online-jsp-compiler"
+					class="pull-left"><img
+					style="position: absolute; top: 0; left: 0; border: 0;"
+					src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67"
+					alt="Fork me on GitHub"
+					data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
 			</div>
 		</div>
 		<!-- /.container-fluid -->
@@ -100,29 +117,38 @@ margin-right: 63px !important;
 						<label for="jspBody">JSP Code</label>
 						<form name="JSPCode" method="post" action="JSPTestServlet">
 							<textarea name="jspBody" id="jspBody" cols="50" rows="10"
-								class="form-control">${jspBody}</textarea>
-							<br /> <input type="submit" id="button" value="submit" class="btn btn-default" />
+								class="form-control">${empty jspBody?"<html><body><% out.print(new java.util.Date()); %></body></html>":jspBody}</textarea>
+							<br /> <input type="submit" id="button" value="submit"
+								class="btn btn-default" />
 						</form>
 					</div>
 					<div class="col-md-1"></div>
 					<div class="col-md-6">
 						<label for="response">Output</label>
-						<% 
-String value = response.getHeader("includeJSP");
-String path = response.getHeader("path");
-String error = response.getHeader("error");
-if(value != null && value.equalsIgnoreCase("true")){ 
-//out.print(filePath);
-try{
-%>
+						<%
+							String value = response.getHeader("includeJSP");
+							String path = response.getHeader("path");
+							String jspBody = response.getHeader("jspBody");
+							String error = response.getHeader("error");
+							if (value != null && value.equalsIgnoreCase("true")) {
+								//out.print(filePath);
+								try {
+						%>
 
-						<jsp:include page="<%=path %>" flush="true" />
+						<jsp:include page="<%=path%>" flush="true"/>
 
-						<% }catch(Exception e){
-							out.println(e.getMessage());
-						}
-}
-%>
+						<%
+							} catch (Exception e) {
+									if (e.getCause() != null){
+										if(e.getCause().getClass().toString().equals(java.lang.SecurityException.class.toString())) 
+										out.println(e.getCause());
+										 else
+												out.println(e.getMessage());
+									} else
+										out.println(e.getMessage());
+								}
+							}
+						%>
 					</div>
 				</div>
 			</div>
@@ -136,17 +162,22 @@ try{
 					<h3>About Online JSP Compiler</h3>
 					<p>Online JSP Compiler is a free to use, open source project
 						which helps user to test their standalone jsp pages</p>
-						
-						<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div>
-<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div> -->
+
+					<div class="LI-profile-badge" data-version="v1" data-size="medium"
+						data-locale="en_US" data-type="horizontal" data-theme="dark"
+						data-vanity="shrivastava-prateek">
+						<a class="LI-simple-link"
+							href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek
+							Shrivastava</a>
+					</div>
+					<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div> -->
 				</div>
 			</div>
 		</div>
 		<div class="footer-below">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">Online JSP
-						Compiler</div>
+					<div class="col-lg-12">Online JSP Compiler</div>
 				</div>
 			</div>
 		</div>
@@ -175,7 +206,7 @@ try{
 	<!-- Theme JavaScript -->
 	<script src="resources/js/freelancer.min.js"></script>
 
-	
+
 </body>
 
 </html>
