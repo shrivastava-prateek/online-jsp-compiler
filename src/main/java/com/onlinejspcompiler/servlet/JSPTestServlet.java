@@ -1,4 +1,4 @@
-package com.onlinejspcompiler.servlets;
+package com.onlinejspcompiler.servlet;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.onlinejspcompiler.security.JSPSecurityManager;
+
 
 public class JSPTestServlet extends HttpServlet {
 
@@ -16,11 +18,13 @@ public class JSPTestServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 
 	@Override
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException
 	{
+		JSPSecurityManager.configureSecurityManager();
 		System.out.println(request.getParameter("jspBody"));
 		String jspBody = request.getParameter("jspBody");
 		// Set response content type

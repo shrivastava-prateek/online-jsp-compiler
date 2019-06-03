@@ -3,8 +3,11 @@
 .project
 .settings/
 
+bin/
+
 # Maven
 log/
 target/
 
 /target/
+
