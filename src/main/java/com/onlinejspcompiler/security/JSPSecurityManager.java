@@ -6,6 +6,7 @@ import java.security.Permission;
 
 public class JSPSecurityManager extends SecurityManager{
 
+	//Work in Progress
 	@Override
 	public void checkPermission( Permission permission ) { 
 		System.out.println("inside check permission method---" + permission.getClass().toString()
