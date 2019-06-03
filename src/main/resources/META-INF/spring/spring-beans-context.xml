@@ -13,6 +13,7 @@
  
 <!--  Bean definitions -->
 <!-- Sample bean -->
+<!-- <bean id="webAppInit" class="com.onlinejspcompiler.configuration.WebAppInitialization" init-method="configureSecurityManager"/> -->
  
  
  </beans>                           

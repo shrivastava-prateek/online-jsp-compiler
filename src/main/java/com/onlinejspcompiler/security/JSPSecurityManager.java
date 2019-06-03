@@ -6,6 +6,15 @@ import java.security.Permission;
 
 public class JSPSecurityManager extends SecurityManager{
 
+	private static JSPSecurityManager jspSecurityManager;
+	
+	private JSPSecurityManager() {}
+	
+	public static JSPSecurityManager getJSPSecurityManagerInstance() {
+		if(jspSecurityManager == null)
+			jspSecurityManager = new JSPSecurityManager();
+		return jspSecurityManager;
+	}
 	//Work in Progress
 	@Override
 	public void checkPermission( Permission permission ) { 
@@ -178,7 +187,9 @@ public class JSPSecurityManager extends SecurityManager{
 	
 	
 	public static void configureSecurityManager() {
-		System.setSecurityManager(new JSPSecurityManager()) ;
+		System.setSecurityManager(getJSPSecurityManagerInstance()) ;
 	}
+	
+	
 	
 }

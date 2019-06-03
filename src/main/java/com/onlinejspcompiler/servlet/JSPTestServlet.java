@@ -14,17 +14,18 @@ import com.onlinejspcompiler.security.JSPSecurityManager;
 
 public class JSPTestServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
+	private static final long serialVersionUID = 1L;
+	static boolean flag = false;
 
 	@Override
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 			throws ServletException, IOException
 	{
-		JSPSecurityManager.configureSecurityManager();
+		
+		  if (!flag) { JSPSecurityManager.configureSecurityManager();
+		  System.out.println("Registering security manager"); flag = !flag; }
+		 
 		System.out.println(request.getParameter("jspBody"));
 		String jspBody = request.getParameter("jspBody");
 		// Set response content type
