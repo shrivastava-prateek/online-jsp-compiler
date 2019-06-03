@@ -160,13 +160,13 @@
 			<div class="container">
 				<div class="col-lg-12" style="padding-bottom: 20px;">
 					<div class="col-md-6">
-						<h4>About Online JSP Compiler</h4>
+						<h4 style="color:#e6ffb4;">About Online JSP Compiler</h4>
 						<p>It is a free to use, open source project
 							which helps user to test their standalone jsp snippets on the fly. Feel free to suggest any enhancements :)</p>
 					</div>
 					<div class="col-md-2"></div>
 					<div class=" col-md-4" style="padding-left:40px;">
-					<h4>Contact me</h4>
+					<h4 style="color:#e6ffb4;">Contact me</h4>
 						<div class="LI-profile-badge" data-version="v1" data-size="medium"
 							data-locale="en_US" data-type="horizontal" data-theme="dark"
 							data-vanity="shrivastava-prateek" data-rendered="true"
