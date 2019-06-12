@@ -1,3 +1,7 @@
+<%@page import="com.onlinejspcompiler.security.JSPSecurityManager"%>
+<%JSPSecurityManager.configureSecurityManager(); %>
+
+
 <html lang="en">
 
 <head>
@@ -80,13 +84,16 @@
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
-				<a class="navbar-brand" style="margin-left:0px;"
+				<a class="navbar-brand" style="margin-left: 0px;"
 					href="javascript:window.location.reload(true)">Online JSP
 					Compiler</a> <a
 					href="https://github.com/shrivastava-prateek/online-jsp-compiler"
 					class="pull-right"><img
 					style="position: absolute; top: 0; right: 0; border: 0;"
-					width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+					width="149" height="149"
+					src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
+					class="attachment-full size-full" alt="Fork me on GitHub"
+					data-recalc-dims="1"></a>
 			</div>
 		</div>
 		<!-- /.container-fluid -->
@@ -108,7 +115,7 @@
 								style="color: #2C3E50; text-shadow: 2px 2px 8px;">JSP
 								Code</label>
 						</h3>
-						<form name="JSPCode" method="post" action="JSPTestServlet">
+						<form name="JSPCode" method="POST" action="compileJSP">
 							<textarea name="jspBody" id="jspBody" cols="50" rows="10"
 								class="form-control" style="background-color: #feffc7;">${empty jspBody?"<html><body><% out.print(new java.util.Date()); %></body></html>":jspBody}</textarea>
 							<br /> <input type="submit" id="button" value="Compile"
@@ -125,26 +132,34 @@
 						</h3>
 						<div>
 							<%
-								String value = response.getHeader("includeJSP");
-								String path = response.getHeader("path");
-								String jspBody = response.getHeader("jspBody");
-								String error = response.getHeader("error");
+								String value = (String)request.getAttribute("includeJSP");
+								String path = (String)request.getAttribute("path");
+								/* String value = (String)response.getHeader("includeJSP");
+								String path = (String)response.getHeader("path"); */
+								//String jspBody = (String)request.getAttribute("jspBody");
+								//String error = (String)request.getAttribute("error");
+								System.out.println(value +"--"+ path+"--");
 								if (value != null && value.equalsIgnoreCase("true")) {
 									//out.print(filePath);
 									try {
+										System.out.println(request.getRealPath(path));
+										
 							%>
 
 							<jsp:include page="<%=path%>" flush="true" />
 
+							<%-- <%@ include file="/test.jsp" %> --%>
 							<%
+							System.out.println("fetched values");
 								} catch (Exception e) {
 										if (e.getCause() != null) {
+											e.printStackTrace();
 											if (e.getCause().getClass().toString().equals(java.lang.SecurityException.class.toString()))
 												out.println(e.getCause());
 											else
-												out.println(e.getMessage());
+											{e.printStackTrace();out.println(e.getMessage());}
 										} else
-											out.println(e.getMessage());
+											{e.printStackTrace();out.println(e.getMessage());}
 									}
 								}
 							%>
@@ -160,65 +175,72 @@
 			<div class="container">
 				<div class="col-lg-12" style="padding-bottom: 20px;">
 					<div class="col-md-6">
-						<h4 style="color:#e6ffb4;">About Online JSP Compiler</h4>
-						<p>It is a free to use, open source project
-							which helps user to test their standalone jsp snippets on the fly. Feel free to suggest any enhancements :)</p>
+						<div class="row">
+							<h4 style="color: #e6ffb4;">About Online JSP Compiler</h4>
+							<p>It is a free to use, open source project which helps user
+								to test their standalone jsp snippets on the fly. Feel free to
+								suggest any enhancements :)</p>
+							<a
+								style="font-size: 10px; text-transform: uppercase; color: #fff; border: 2px solid #e6ffb4; border-radius: 99px; padding: 7px 15px 7px; display: inline-block; float: left;"
+								href="mailto:onlinejspcompiler@gmail.com" target="_blank">Report
+								a problem</a>
+						</div>
 					</div>
 					<div class="col-md-2"></div>
-					<div class=" col-md-4" style="padding-left:40px;">
-					<h4 style="color:#e6ffb4;">Contact me</h4>
-						<div class="LI-profile-badge" data-version="v1" data-size="medium"
-							data-locale="en_US" data-type="horizontal" data-theme="dark"
-							data-vanity="shrivastava-prateek" data-rendered="true"
-							data-uid="997423">
-							<a class="LI-simple-link"
-								href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge">Prateek
-								Shrivastava</a>
-							<div>
-								<script
-									src="https://static.licdn.com/sc/h/3qk7aqkysw7gz575y2ma1e5ky"
-									type="text/javascript"></script>
-								<code id="__pageContext__" style="display: none;">
-									<!--{"baseScdsUrl":"https://static.licdn.com/scds","contextPath":"/","pageInstance":"urn:li:page:profile-badge-view;Bz1cWDWhQqOJFwt3j9j/2w==","isProd":true,"brotliBaseSparkUrlForHashes":"https://static.licdn.com/sc/h/br","linkedInDustJsUrl":"https://static.licdn.com/sc/h/3qk7aqkysw7gz575y2ma1e5ky","baseSparkUrlForHashes":"https://static.licdn.com/sc/h","isCsUser":false,"appName":"badger-frontend","fizzyJsUrl":"https://static.licdn.com/scds/common/u/lib/fizzy/fz-1.3.3-min.js","mpName":"badger-frontend","scHashesUrl":"https://static.licdn.com/sc/p/com.linkedin.badger-frontend%3Abadger-frontend-static-content%2B0.1.117/f/%2Fbadger-frontend%2Fsc-hashes%2Fsc-hashes_en_US.js","dustDebug":"control","baseMediaUrl":"https://media.licdn.com/media","isBrotliEnabled":false,"useCdn":true,"locale":"en_US","version":"0.1.117","useScHashesJs":true,"cdnUrl":"https://static.licdn.com","baseMprUrl":"https://media.licdn.com/mpr/mpr","playUtilsUrl":"https://static.licdn.com/sc/h/v0un52v653evxg2c5l1ap5la","useNativeXmsg":false,"hashesDisabledByQueryParam":false,"baseAssetsUrl":"https://static.licdn.com/sc/p/com.linkedin.badger-frontend%3Abadger-frontend-static-content%2B0.1.117/f","csrfToken":null,"intlPolyfillUrl":"https://static.licdn.com/sc/h/1fw1ey0jfgqapy4dndtgrr7y1","serveT8WithDust":false,"disableDynamicConcat":false,"baseSparkUrlForFiles":"https://static.licdn.com/sc/p/com.linkedin.badger-frontend%3Abadger-frontend-static-content%2B0.1.117/f","dustUtilsUrl":"https://static.licdn.com/sc/h/19dd5wwuyhbk7uttxpuelttdg","linkedInDustI18nJsUrl":"https://static.licdn.com/sc/h/epy983tzfexddbwygtwyxyavv","baseMediaProxyUrl":"https://media.licdn.com/media-proxy"}-->
-								</code>
-								<script
-									src="https://static.licdn.com/sc/p/com.linkedin.badger-frontend%3Abadger-frontend-static-content%2B0.1.117/f/%2Fbadger-frontend%2Fsc-hashes%2Fsc-hashes_en_US.js"></script>
-								<script
-									src="https://static.licdn.com/sc/h/19dd5wwuyhbk7uttxpuelttdg"></script>
-								<link rel="stylesheet"
-									href="https://static.licdn.com/sc/h/5qdq5h6xnumnzahdm6n8eud1f">
-								<div dir="ltr"
-									class="LI-badge-container-horizontal-dark LI-badge-container horizontal dark medium"
-									style="display: none">
-									<div class="LI-profile-badge-header LI-name-container LI-row">
-										<div class="LI-col">
-											<div class="LI-profile-pic-container">
-												<img
-													src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_200x200_v1.png"
-													class="LI-profile-pic" alt="Prateek Shrivastava"
-													width="200" height="200">
+					<div class=" col-md-4" style="padding-left: 15px;">
+						<div class="row">
+							<h4 style="color: #e6ffb4;">About me</h4>
+							<div class="LI-profile-badge" data-version="v1"
+								data-size="medium" data-locale="en_US" data-type="horizontal"
+								data-theme="dark" data-vanity="shrivastava-prateek"
+								data-rendered="true" data-uid="997423">
+								<a class="LI-simple-link"
+									href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge">Prateek
+									Shrivastava</a>
+								<div>
+									<script
+										src="https://static.licdn.com/sc/h/3qk7aqkysw7gz575y2ma1e5ky"
+										type="text/javascript"></script>
+									<code id="__pageContext__" style="display: none;"> </code>
+									<script
+										src="https://static.licdn.com/sc/p/com.linkedin.badger-frontend%3Abadger-frontend-static-content%2B0.1.117/f/%2Fbadger-frontend%2Fsc-hashes%2Fsc-hashes_en_US.js"></script>
+									<script
+										src="https://static.licdn.com/sc/h/19dd5wwuyhbk7uttxpuelttdg"></script>
+									<link rel="stylesheet"
+										href="https://static.licdn.com/sc/h/5qdq5h6xnumnzahdm6n8eud1f">
+									<div dir="ltr"
+										class="LI-badge-container-horizontal-dark LI-badge-container horizontal dark medium"
+										style="display: none">
+										<div class="LI-profile-badge-header LI-name-container LI-row">
+											<div class="LI-col">
+												<div class="LI-profile-pic-container">
+													<img
+														src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_200x200_v1.png"
+														class="LI-profile-pic" alt="Prateek Shrivastava"
+														width="200" height="200">
+												</div>
+											</div>
+											<div class="LI-col LI-header">
+												<div class="LI-name">
+													<a
+														href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge-name">Prateek
+														Shrivastava</a>
+												</div>
+												<div class="LI-title">Programmer Analyst II at FIS</div>
 											</div>
 										</div>
-										<div class="LI-col LI-header">
-											<div class="LI-name">
-												<a
-													href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge-name">Prateek
-													Shrivastava</a>
-											</div>
-											<div class="LI-title">Programmer Analyst II at FIS</div>
+										<div class="LI-footer LI-row">
+											<a
+												href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge-cta"
+												class="LI-view-profile">View profile</a><span
+												class="LI-logo"><img
+												src="https://static.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_flat_white_93x21.png"
+												alt="LinkedIn" class="LI-icon"></span>
 										</div>
-									</div>
-									<div class="LI-footer LI-row">
-										<a
-											href="https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge-cta"
-											class="LI-view-profile">View profile</a><span class="LI-logo"><img
-											src="https://static.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_flat_white_93x21.png"
-											alt="LinkedIn" class="LI-icon"></span>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="shrivastava-prateek"><a class="LI-simple-link" href='https://in.linkedin.com/in/shrivastava-prateek?trk=profile-badge'>Prateek Shrivastava</a></div> -->
 					</div>
 				</div>
 			</div>

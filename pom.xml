@@ -147,6 +147,12 @@
 			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.ahocorasick</groupId>
+			<artifactId>ahocorasick</artifactId>
+			<version>0.4.0</version>
+		</dependency>
 
 	</dependencies>
 	<build>

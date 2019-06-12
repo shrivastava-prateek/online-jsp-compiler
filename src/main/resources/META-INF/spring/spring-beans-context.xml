@@ -14,7 +14,20 @@
 <!--  Bean definitions -->
 <!-- Sample bean -->
 <!-- <bean id="webAppInit" class="com.onlinejspcompiler.configuration.WebAppInitialization" init-method="configureSecurityManager"/> -->
- 
+<!--   <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+          <list>
+            <value>classpath*:application.properties</value>
+          </list>
+        </property>
+      </bean>
+      
+ <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations" value="classpath*:application.properties"/>
+</bean> -->
+    
+      
  
  </beans>                           
                             
