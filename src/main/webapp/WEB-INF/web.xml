@@ -16,21 +16,21 @@
           </servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  <servlet>
-    <servlet-name>JSPTestServlet</servlet-name>
+  <!-- <servlet>
+    <servlet-name>JSPCompilerServlet</servlet-name>
     <servlet-class>
-                    com.onlinejspcompiler.servlet.JSPTestServlet
+                    com.onlinejspcompiler.servlet.JSPCompilerServlet
           </servlet-class>
     <load-on-startup>1</load-on-startup>
-  </servlet>
+  </servlet> -->
   <servlet-mapping>
     <servlet-name>spring-web</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>JSPTestServlet</servlet-name>
-    <url-pattern>/JSPTestServlet</url-pattern>
-  </servlet-mapping>
+  <!-- <servlet-mapping>
+    <servlet-name>JSPCompilerServlet</servlet-name>
+    <url-pattern>/compile</url-pattern>
+  </servlet-mapping> -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>WEB-INF/spring-web-servlet.xml,classpath*:META-INF/spring/*-context.xml</param-value>

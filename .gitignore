@@ -1,13 +1,39 @@
-# Eclipse
-.classpath
-.project
-.settings/
-
-bin/
-
-# Maven
-log/
-target/
-
+HELP.md
 /target/
+!.mvn/wrapper/maven-wrapper.jar
 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+target/
+.env
+.idea/
+*.iml
+.settings/
+docs/tmp/
+docs/java-getting-started/
+docs/deploying-spring-boot-apps/
+.jdk-overlay/
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
