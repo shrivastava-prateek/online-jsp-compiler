@@ -1,0 +1,35 @@
+a[class="navbar-brand"]{
+	margin-left: 0px;
+}
+
+.LI-view-profile {
+	margin-right: 63px !important;
+}
+
+label[class="jspBody"], label[class="output"] {
+	color: #2C3E50; text-shadow: 2px 2px 8px;
+}
+
+textarea[name="jspBody"][id="jspBody"]{
+	background-color: #feffc7;
+}
+
+input[value="Compile"]{
+	color: #f3d6cb; background-color: #376a95; border-color: #4288cd; font-weight: 600;
+}
+
+h4[class="title-about"], h4[class="about-me"]{
+	color: #e6ffb4;
+}
+
+a[class="resport-problem"]{
+	font-size: 10px; text-transform: uppercase; color: #fff; border: 2px solid #e6ffb4; border-radius: 99px; padding: 7px 15px 7px; display: inline-block; float: left;
+}
+
+.footer-above .container .col-lg-12{
+	padding-bottom: 20px;
+}
+
+.footer-above .container .col-lg-12 .col-md-4{
+	padding-left: 15px;
+}
