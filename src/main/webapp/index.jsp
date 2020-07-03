@@ -15,6 +15,7 @@
 <meta name="author" content="Prateek Shrivastava">
 <meta name="google-site-verification"
 	content="rnvRHKJmtTnFyA8IztC5opcdrxOMa-lsaKvOh3e-Jj8" />
+	<!--og-changes-->
 <meta name="image" property="og:image" content="https://cdn.jsdelivr.net/gh/shrivastava-prateek/online-jsp-compiler/src/main/resources/logo.png">
 	
 	
