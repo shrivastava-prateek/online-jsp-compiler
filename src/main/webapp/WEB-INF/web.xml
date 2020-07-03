@@ -40,4 +40,22 @@
       org.springframework.web.context.ContextLoaderListener
    </listener-class>
   </listener>
+  
+   <filter>
+    <filter-name>MoesifFilter</filter-name>
+    <filter-class>com.moesif.servlet.MoesifFilter</filter-class>
+    <init-param>
+      <param-name>application-id</param-name>
+      <param-value>eyJhcHAiOiI1MTk6MjMyIiwidmVyIjoiMi4wIiwib3JnIjoiMjQwOjI4OSIsImlhdCI6MTU5MzU2MTYwMH0.hloe4UdUMZB_iiYba0kLFwb6HDdYTAL7aCKkQkOGQ0k</param-value>
+    </init-param>
+    <init-param>
+      <param-name>logBody</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>MoesifFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>
