@@ -9,7 +9,6 @@
 	<name>online-jsp-compiler Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-
 	<properties>
 		<org.springframework.version>4.3.6.RELEASE</org.springframework.version>
 		<maven-source-pulgin.version>3.1.0</maven-source-pulgin.version>
