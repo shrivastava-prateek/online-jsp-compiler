@@ -37,35 +37,9 @@ public class JSPController {
 				}catch(SecurityException e) {
 					e.printStackTrace();
 					jspBodyOut = e.toString();
-					//throw new SecurityException(jspBodyOut);
+
 				}
 				try {
-				/*
-				 * System.out.println("context.getContextPath()-"+context.getContextPath());
-				 * System.out.println("context.getRealPath(\"/index.jsp\")-"+context.getRealPath
-				 * ("/index.jsp"));
-				 * for(String path: context.getResourcePaths("/")) {
-				 * System.out.println("resource path:-"+path);
-				 * }
-				 * System.out.println("context.getResource(\"/\").getPath()-"+context.
-				 * getResource("/").getPath());
-				 * String path = context.getRealPath("/")==null?"":context.getRealPath("/");
-				 * System.out.println(
-				 * "context.getRealPath(context.getResource(\"/WEB-INF/\").getPath())-"+context.
-				 * getRealPath(context.getResource("/WEB-INF/").getPath()));
-				 * //String path =
-				 * context.getResource("/WEB-INF/").getPath()==null?"":context.getResource(
-				 * "/WEB-INF/").getPath();
-				 * System.out.println("context.getRealPath(\"/\")-"+context.getRealPath("/"));
-				 * Path currentDir = Paths.get("WEB-INF");
-				 * //String path = currentDir.toAbsolutePath().resolve("test.jsp").toString();
-				 * System.out.println("Using paths:- "+path);
-				 * System.out.println(
-				 * "this.getClass().getClassLoader().getResource(\"/\").toString()-"+this.
-				 * getClass().getClassLoader().getResource("/").toString());
-				 * System.out.println("this.getClass().getResource(\"/\").getPath()-"+this.
-				 * getClass().getResource("/").getPath());
-				 */
 					String path = context.getRealPath("/")==null?"":context.getRealPath("/");
 					path+="/test.jsp";
 					if(jspBodyOut==null)
@@ -86,7 +60,6 @@ public class JSPController {
 		
 		@RequestMapping(value= {"/compileJSP","/"},method=RequestMethod.GET)
 		public String index(Map<String, Object> model) {
-			//JSPSecurityManager.configureSecurityManager();
 			
 			  String jspBody =
 			  "<html><body><% out.print(new java.util.Date()); %></body></html>";

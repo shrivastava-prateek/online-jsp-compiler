@@ -308,7 +308,6 @@ public class JSPSecurityManager extends SecurityManager {
 	 * throw new SecurityException("Dude! No Thread manipulations!"); }
 	 */
 
-	@Override
 	public void checkAwtEventQueueAccess() {
 		throw new SecurityException("Are you trying to play with AWT here? Please read the title of the page!!");
 	}
@@ -348,7 +347,7 @@ public class JSPSecurityManager extends SecurityManager {
 		throw new SecurityException("Don't try to sneak on other ports!");
 	}
 
-	@Override
+
 	public void checkMemberAccess(Class<?> clazz, int which) {
 		throw new SecurityException("No Access related snippets please!");
 	}
@@ -369,12 +368,12 @@ public class JSPSecurityManager extends SecurityManager {
 	 * SecurityException("Dude! Sockets are not for kids!"); }
 	 */
 
-	@Override
+
 	public void checkSystemClipboardAccess() {
 		throw new SecurityException("Use your own System Cipboard!");
 	}
 
-	@Override
+
 	public boolean checkTopLevelWindow(Object window) {
 		throw new SecurityException("Nope! Neva!");
 	}
